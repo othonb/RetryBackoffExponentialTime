@@ -12,6 +12,7 @@ public class RetryWithExponentialBackoff {
     private static final long INITIAL_BACKOFF_MILLIS = 1000; // 1 second
     private static final long MAX_BACKOFF_MILLIS = 10000; // 10 seconds
     private static final long BASE = 2; // Exponential backoff base
+    private static final float SUCCESS_CHANCE = 0.9; // Success chance
 
     private static final Logger logger = Logger.getLogger("RetryWithExponentialBackoff.class");
 
@@ -88,7 +89,7 @@ public class RetryWithExponentialBackoff {
     // Random success or fail for a hypothetical task
     private static void performTask(final int attempts){
 
-        if(Math.random() > 0.8) {
+        if(Math.random() > SUCCESS_CHANCE) {
 
             logger.log(Level.INFO,"{0}. Task succeeded.", attempts);
 
