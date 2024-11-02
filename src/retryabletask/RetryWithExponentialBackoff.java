@@ -12,7 +12,7 @@ public class RetryWithExponentialBackoff {
     private static final long INITIAL_BACKOFF_MILLIS = 1000; // 1 second
     private static final long MAX_BACKOFF_MILLIS = 10000; // 10 seconds
     private static final long BASE = 2; // Exponential backoff base
-    private static final float SUCCESS_CHANCE = 0.9; // Success chance
+    private static final float SUCCESS_CHANCE = 0.9f; // Success chance
 
     private static final Logger logger = Logger.getLogger("RetryWithExponentialBackoff.class");
 
